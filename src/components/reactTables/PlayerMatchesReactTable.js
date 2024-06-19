@@ -85,7 +85,7 @@ const PlayerMatchesReactTable=()=>{
             accessor: 'homeTeam',   
             Cell: tableProps => (
                 <div>      
-                   <img src={`data:image/jpeg;base64,${getImage(tableProps.row.original.homeTeam)}`}  style={{ width: 30, height:30,marginRight: 10 }} className = 'player1'/>       
+                   <img src={`data:image/jpeg;base64,${getImage(tableProps.row.original.homeTeam)}`}  style={{ width: 25, height:25,marginRight: 10 }} className = 'player1'/>       
                    
                     {tableProps.row.original.homeTeam}  
                 </div> ),     
@@ -95,11 +95,11 @@ const PlayerMatchesReactTable=()=>{
             Cell: tableProps => (
               <div>  
            
-                 <img  src= {pic} style={{ width: 30, height:30, marginBottom: 5 }} className = 'player1' />
-                  {tableProps.row.original.player1ID} - {tableProps.row.original.player1Name}
+                 <img  src= {pic} style={{ width: 25, height:25, marginBottom: 5 }} className = 'player1' />
+                 
                   {(tableProps.row.original.player2Score < tableProps.row.original.player1Score)?
-                      <img  src= {win} style={{ width: 15, height:15,marginLeft:5 }} className = 'player1' />:
-                      <></>
+                    <span style={{color: '#198754'}}>{tableProps.row.original.player1ID} - {tableProps.row.original.player1Name}</span>  :
+                    <span style={{color: '#dc3545'}}>{tableProps.row.original.player1ID} - {tableProps.row.original.player1Name}</span>
                   }
         
                 
@@ -117,27 +117,22 @@ const PlayerMatchesReactTable=()=>{
             accessor: 'awayTeam',    
             Cell: tableProps => (
                 <div>       
-                   <img src={`data:image/jpeg;base64,${getImage(tableProps.row.original.awayTeam)}`}  style={{ width: 30, height:30,marginRight: 10 }} className = 'player1'/>      
+                   <img src={`data:image/jpeg;base64,${getImage(tableProps.row.original.awayTeam)}`}  style={{ width: 25, height:25,marginRight: 10 }} className = 'player1'/>      
                     {tableProps.row.original.awayTeam}  
                 </div> 
                 
                 ),      
           },
-      {
+     {
         Header: 'Away Player',
         accessor: 'player2Name',
         Cell: tableProps => (
           <div>  
-       
-       <img  src= {pic} style={{ width: 30, height:30, marginBottom: 5 }} className = 'player1' />  
-              {tableProps.row.original.player2ID} - {tableProps.row.original.player2Name}
-                {(tableProps.row.original.player2Score > tableProps.row.original.player1Score)?
-                <img  src= {win} style={{ width: 15, height:15,marginLeft:5 }} className = 'player1' />:
-                <></>
-              }
-              
-    
-            
+            <img  src= {pic} style={{ width: 25, height:25, marginBottom: 5 }} className = 'player1' />  
+            {(tableProps.row.original.player2Score > tableProps.row.original.player1Score)?
+               <span style={{color: '#198754'}}>{tableProps.row.original.player2ID} - {tableProps.row.original.player2Name}</span>
+               :  <span style={{color: '#dc3545'}}>{tableProps.row.original.player2ID} - {tableProps.row.original.player2Name}</span>
+            }
           </div> 
         ),
       },
