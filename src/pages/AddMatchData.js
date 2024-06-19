@@ -295,7 +295,17 @@ const AddMatchData=()=> {
                             {isSchoolImagesLoaded  && (
                                     <img src={`data:image/jpeg;base64,${getImage(localStorage.awayTeam)}`}  style={{ width: 30, height:30,marginLeft: 5 }} className = 'player1'/>  
                                 )}           
-                            <br/><br/>                  
+                            <br/><br/> 
+                            <div style={{ float: "right"}}>   
+                              <ReactToPrint
+                                  trigger={()=>{
+                                      return <button type="button" className = "btn btn-primary mb-2" disabled = {loading} style={{marginRight: 10}}>  <BsIcons.BsPrinter  style={{ width: 20,height:20,marginRight: 5}}/>  Print</button> 
+                                  }}
+                                  content = {()=> componentRef}
+                                  documentTitle = {localStorage.matchDivision}
+                                  pageStyle = "print"
+                              />        
+                          </div>      
                         </span>
                     </h5>
                 </div>
@@ -314,16 +324,7 @@ const AddMatchData=()=> {
                 :
                 <></>    
             }
-                <div style={{ float: "right"}}>   
-                <ReactToPrint
-                    trigger={()=>{
-                        return <button type="button" className = "btn btn-primary mb-2" disabled = {loading} style={{marginRight: 10}}>  <BsIcons.BsPrinter  style={{ width: 20,height:20,marginRight: 5}}/>  Print</button> 
-                    }}
-                    content = {()=> componentRef}
-                    documentTitle = {localStorage.matchDivision}
-                    pageStyle = "print"
-                />        
-                </div>      
+                
                 <table className = "table table-striped" ref={(e1) => (componentRef = e1)}>
                 <style type="text/css" media="print">{"\
                                                             @page { size: landscape; }\
