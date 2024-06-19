@@ -341,7 +341,7 @@ const AddMatchData=()=> {
                     
                     {boardRows.map((val,index)=>
                         ( <tr key={index}>
-                        <th > Court {index+1} </th>
+                        <th > Pair {index+1} </th>
                         <th  style={{width: '35%'}}>  
                             <Select
                                 type = "text"
