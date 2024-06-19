@@ -95,7 +95,7 @@ const PlayerMatchesReactTable=()=>{
             Cell: tableProps => (
               <div>  
            
-                 <img  src= {pic} style={{ width: 25, height:25, marginBottom: 5 }} className = 'player1' />
+                 <img  src= {pic} style={{ width: 25, height:25,marginRight:-15, marginBottom: 5 }} className = 'player1' />
                  
                   {(tableProps.row.original.player2Score < tableProps.row.original.player1Score)?
                     <span style={{color: '#198754'}}>{tableProps.row.original.player1ID} - {tableProps.row.original.player1Name}</span>  :
@@ -128,7 +128,7 @@ const PlayerMatchesReactTable=()=>{
         accessor: 'player2Name',
         Cell: tableProps => (
           <div>  
-            <img  src= {pic} style={{ width: 25, height:25, marginBottom: 5 }} className = 'player1' />  
+            <img  src= {pic} style={{ width: 25, height:25, marginRight:-15, marginBottom: 5 }} className = 'player1' />  
             {(tableProps.row.original.player2Score > tableProps.row.original.player1Score)?
                <span style={{color: '#198754'}}>{tableProps.row.original.player2ID} - {tableProps.row.original.player2Name}</span>
                :  <span style={{color: '#dc3545'}}>{tableProps.row.original.player2ID} - {tableProps.row.original.player2Name}</span>
